@@ -1,0 +1,407 @@
+/* variables */
+:root {
+    --theme: #D63031; 
+    --bg-primary: #FFFFFF;
+    --bg-secondary: #DFE6E9;
+    --fg-primary: #2D3436;
+}
+
+/* base css */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    width: 100%;
+    height: 100%;
+
+    font-size: 10px;
+    font-family: 'Inter', sans-serif;
+}
+
+body {
+    width: 100%;
+    height: 100%;
+}
+
+/* navbar section */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 0 4rem;
+
+    width: 100%;
+    height: 6rem;
+
+    z-index: 9999;
+
+    border-bottom: 0.4rem solid rgba(0, 0, 0, 0.15);
+    background-color: var(--bg-primary);
+}
+
+.navbar-logo {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.navbar-logo-icon {
+    margin-right: 1rem;
+}
+
+.navbar-logo-icon img {
+    width: 3.5rem;
+    height: 3.5rem;
+}
+
+.navbar-logo-text {
+    font-size: 2.5rem;
+    font-weight: 700;
+
+    color: var(--theme);
+}
+
+.navbar-toggle {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+    font-size: 2.5rem;
+    
+    width: 2.5rem;
+    
+    color: var(--fg-primary);
+}
+
+.navbar-items {
+    position: fixed;
+    top: 6rem;
+    left: 0;
+
+    padding-top: 4rem;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    width: 100vw;
+    height: 100vh;
+
+    transform: translateX(100%);
+    transition: 0.2s ease-in-out;
+
+    /* mobile */
+    background-color: var(--bg-secondary);
+}
+
+.navbar-show {
+    transform: translateX(0);
+    transition: 0.2s ease-in-out;
+}
+
+.navbar-item {
+    text-decoration: none;
+    
+    margin-bottom: 3rem;
+    
+    font-size: 1.6rem;
+    font-weight: 600;
+    
+    color: var(--fg-primary);
+}
+
+.navbar-active {
+    color: var(--theme);
+    
+    font-weight: 700;
+}
+
+/* hero section */
+.hero {
+    position: relative;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+
+    width: 100%;
+    height: 100vh;
+}
+
+.hero-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    z-index: -10;
+
+    object-fit: cover;
+}
+
+.hero-heading {
+    font-size: 2.6rem;
+    font-weight: 700;
+    text-align: center;
+    
+    color: var(--bg-primary);
+}
+
+/* about section */
+.about {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+    width: 100%;
+    height: 400vh;
+}
+
+.card {
+    width: 100%;
+    height: 100%;
+    
+    padding: 2rem;
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.card-type-1 {
+    background-color: var(--bg-primary);
+}
+
+.card-type-2 {
+    background-color: var(--bg-secondary);
+}
+
+.card-content {
+    width: 100%;
+    height: 100vh;
+}
+
+.card-heading {
+    font-size: 3rem;
+    font-weight: 600;
+
+    margin-bottom: 1rem;
+
+    color: var(--theme);
+}
+
+.card-text {
+    font-size: 2rem;
+
+    color: var(--fg-primary);
+}
+
+.card-image img {
+    width: 100%;
+    height: 100%;
+
+    border-radius: 1.5rem;
+    border: 0.3rem solid var(--fg-primary);
+
+    object-fit: cover;
+
+}
+
+/* ablum section */
+.album {
+    padding: 2rem;
+    width: 100%;
+    height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.album-heading {
+    font-size: 2rem;
+    font-weight: 600;
+    
+    text-align: center;
+    margin-bottom: 3rem;
+
+    color: var(--theme);
+}
+
+.album-content {
+    width: 100%;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.album-image {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+
+    flex: 1;
+}
+
+.album-image img {
+    width: 100%;
+    height: 100%;
+
+    max-height: 70rem;
+    max-width: 80rem;
+
+    border-radius: 2rem;
+    object-fit: cover;
+}
+
+.album-btn {
+    font-size: 2rem;
+    padding: 0 2rem;
+}
+
+/* footer seciton */
+.footer {
+    height: 5rem;
+    text-align: right;
+    padding: 2rem 4rem;
+}
+
+.footer-text {
+    font-size: 1.5rem;
+}
+
+@media only screen and (min-width: 600px) {
+    .navbar {
+        padding: 0 7rem;
+    }
+
+    .navbar-toggle { 
+        display: none;
+    }
+
+    .navbar-items {
+        position: static;
+        top: 0;
+        left: 0;
+
+        padding-top: 0;
+
+        flex-direction: row;
+
+        width: auto;
+        height: auto;
+
+        transform: translateX(0);
+
+        background-color: transparent;
+    }
+
+    .navbar-item {
+        margin-bottom: 0;
+        margin-left: 3rem;
+    }
+
+    /* hero section */
+    .hero-heading {
+        font-size: 4rem;
+    }
+
+    /* about section */
+    .about {
+        height: 200vh;
+    }
+
+    .card {
+        flex-direction: row;
+
+        padding: 5rem 5rem;
+
+        height: 100vh;
+        flex-direction: row;
+    }
+
+    .card-content {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        width: 50%;
+        height: 100%;
+        padding: 2rem;
+    }
+    
+    .card-text {
+
+        font-size: 2.5rem;
+    }
+
+    .card-image {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .card-image img {
+        width: 70%;
+    }
+
+    .card-image-type-1 img {
+        transform: scale(1) perspective(1000px) rotateX(23deg) rotateY(-23deg) rotate(15deg) translateX(-35px);
+        transition: 0.2s ease-in-out;
+    }
+    
+    .card-image-type-1 img:hover {
+        transform: scale(1);
+        transition: 0.2s ease-in-out;
+    }
+    
+    .card-image-type-2 img {
+        transform: scale(1) perspective(1000px) rotateX(23deg) rotateY(23deg) rotate(-15deg) translateX(35px);
+        transition: 0.2s ease-in-out;
+    }
+    
+    .card-image-type-2 img:hover {
+        transform: scale(1);
+        transition: 0.2s ease-in-out;
+    }
+
+    .card-type-2 {
+        flex-direction: row-reverse;
+    }
+
+    .footer {
+        height: 6rem;
+        padding: 2rem 6rem;
+    }
+
+    .footer-text {
+        font-size: 2rem;
+    }
+
+    /* album section */
+    .album-btn {
+        font-size: 4rem;
+        padding: 10rem;
+    }
+}
